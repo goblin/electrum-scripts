@@ -5,3 +5,7 @@ pbkdf2: pbkdf2.c
 
 electrumize-seed: electrumize-seed.c
 	gcc -o electrumize-seed -Wall -Wextra -O2 electrumize-seed.c -lcrypto
+
+install: pbkdf2 electrumize-seed
+	install -d $(DESTDIR)/usr/bin
+	install pbkdf2 electrumize-seed $(DESTDIR)/usr/bin
