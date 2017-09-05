@@ -7,7 +7,7 @@ on behind the hood.
 
 # Passphrase to seed
 Converting any passphrase to a valid Electrum wallet seed (new format) by
-appending an appropriate decimal number:
+appending an appropriate word:
 
 ```
 echo -n $PASSPHRASE | ./electrumize-seed
@@ -16,11 +16,11 @@ echo -n $PASSPHRASE | ./electrumize-seed
 which is a faster version of:
 
 ```
-for t in `seq 0 9999`
+for t in `seq 0 2047`
 do
 	if echo -n $PASSPHRASE $t | openssl sha512 -hmac "Seed version" | grep -q '= 01'
 	then
-		echo $PASSPHRASE $t
+		echo $PASSPHRASE $dict[$t]
 		break
 	fi
 done
