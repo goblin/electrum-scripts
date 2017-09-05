@@ -9,3 +9,6 @@ electrumize-seed: electrumize-seed.c
 install: pbkdf2 electrumize-seed
 	install -d $(DESTDIR)/usr/bin
 	install pbkdf2 electrumize-seed $(DESTDIR)/usr/bin
+	install -d $(DESTDIR)/usr/share/doc/electrum-scripts
+	install README.md $(DESTDIR)/usr/share/doc/electrum-scripts
+
