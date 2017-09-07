@@ -6,9 +6,9 @@ pbkdf2: pbkdf2.c
 electrumize-seed: electrumize-seed.c
 	gcc -o electrumize-seed -Wall -Wextra -O2 electrumize-seed.c -lcrypto
 
-install: pbkdf2 electrumize-seed
+install: pbkdf2 electrumize-seed ele_seed21st
 	install -d $(DESTDIR)/usr/bin
-	install pbkdf2 electrumize-seed $(DESTDIR)/usr/bin
+	install pbkdf2 electrumize-seed ele_seed21st $(DESTDIR)/usr/bin
 	install -d $(DESTDIR)/usr/share/doc/electrum-scripts
 	install README.md $(DESTDIR)/usr/share/doc/electrum-scripts
 
