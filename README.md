@@ -59,6 +59,9 @@ bx hd-new $ENTROPY | bx hd-public -i $CHANGE | bx hd-public -i $ID | bx hd-to-ec
 where `$CHANGE` is 0 for receiving addresses and 1 for change addresses.
 `$ID`s start at 0.
 
+The provided `ele_seed21st` script combines both above steps into one
+(with $ID = 0).
+
 To get the corresponding private keys in [WIF](https://en.bitcoin.it/wiki/Wallet_import_format):
 ```
 bx hd-new $ENTROPY | bx hd-private -i $CHANGE | bx hd-private -i $ID | bx hd-to-ec | bx ec-to-wif
